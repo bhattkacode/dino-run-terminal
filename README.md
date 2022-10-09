@@ -9,6 +9,7 @@
 ## Controls
 - w or space to Jump
 - s to Duck
+- p to Pause/Resume
 ## Screenshots
 ![](https://raw.githubusercontent.com/SENS-34/dino-run-terminal/main/drun.jpg)
 
