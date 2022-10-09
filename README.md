@@ -10,7 +10,7 @@
 - w or space to Jump
 - s to Duck
 ## Screenshots
-![](https://raw.githubusercontent.com/SENS-34/dino-run-terminal/main/drun1.jpg)
+![](https://raw.githubusercontent.com/SENS-34/dino-run-terminal/main/drun.jpg)
 
 ![](https://raw.githubusercontent.com/SENS-34/dino-run-terminal/main/drun2.jpg)
  
