@@ -6,6 +6,9 @@
 ## Prerequisites
 - Multithreading -- [usually built-in]
 - Keyboard -- [Only for Windows]  --> ```pip3 install keyboard```
+## Controls
+- w or space to Jump
+- s to Duck
 ## Screenshots
 ![](https://raw.githubusercontent.com/SENS-34/dino-run-terminal/main/drun1.jpg)
 
@@ -15,3 +18,4 @@
 ## How to run?
 - Download drun.py or drun_windows.py
 - Open your terminal and enter : ```python3 path/to/drun.py```
+
