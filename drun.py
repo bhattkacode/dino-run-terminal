@@ -106,7 +106,10 @@ def moveObs():
                         minspace+=2
             except:
                 pass
-            sleep(gmag)
+            try:
+                sleep(gmag)
+            except:
+                pass
             show()
 
 
@@ -152,8 +155,7 @@ def show():
 def keyread():
     global key
     while True:
-        if not stopgame:
-            key=sys.stdin.read(1)[0]
+        key=sys.stdin.read(1)[0]
 
 def collision():
     for i in range(len(out)):
@@ -169,8 +171,11 @@ def collision():
 
 
 #VARIABLES
-pchr="$"           #Player character
-gchr="#"           #Ground/Obstacle character
+#Speeds are inversly proportional
+pchr="\033[97m█\033[00m"          #Player character
+gchr="\033[92m█\033[00m"           #Ground/Obstacle character
+# pchr = "$"
+# gchr = "#"
 l = int(popen("stty size","r").read().split()[-1]) - 1 #Length of Display
 b = 25             #Breadth of Display
 ul = b-3           #Player's initial y position 
@@ -224,6 +229,14 @@ while True:
         if key == "s":
             ducking=True
             ducked=0
+        if key == "p":
+            stopgame=True
+            key=""
+            sleep(0.01)
+            print("PAUSED")
+            while key != "p":
+                pass
+            stopgame = False
     key=0
     if ducking:
         delete(range(pi+1+u*d,pi+3+u*d))
@@ -256,7 +269,7 @@ while True:
         sleep(0.005)
         stopgame=True
         sleep(0.1)
-        print("\n"+" "*(l//2-5)+"GAME OVER!")
+        print("\n"+" "*(l//2-5)+"GAME OVER!\n")
 
         if not path.isfile("hs"):
             with open("hs","w") as f:
@@ -273,7 +286,7 @@ while True:
             hs=score
             with open("hs","w") as f:
                 f.write(str(hs))
-            print(" "*(l//2-7)+"NEW HIGHSCORE!")
+            print(" "*(l//2-7)+"NEW HIGHSCORE!\n")
         print(" "*(l//2-7)+"Highscore:",hs//10)
         input(" "*(l//2-23)+"Press Enter 2 times to Restart, Ctrl+c to exit")
         u=ul
